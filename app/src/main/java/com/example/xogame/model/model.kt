@@ -18,7 +18,6 @@ data object model{
         val col: Int
     )
 
-
     data class GameHistory(
         val gameId: String,
         val winner: String?,

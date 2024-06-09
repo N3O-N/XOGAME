@@ -42,25 +42,11 @@ fun board(
     var winner by remember { mutableStateOf<String?>(null) }*/
 
     val board by viewModel.board.observeAsState()
-    val currentPlayer by viewModel.currentPlayer.observeAsState()
     val winner by viewModel.winner.observeAsState()
 
     val _boardSizeDP = if (size == 3) 100.dp else if (size == 5) 60.dp else 45.dp
 
     Column (horizontalAlignment = Alignment.CenterHorizontally){
-
-        Row  {
-            Box (contentAlignment = Alignment.Center) {
-                Text(
-                    text = "Current Player: $currentPlayer",
-                    fontSize = 24.sp,
-                    fontWeight = FontWeight.Bold,
-                    modifier = Modifier.padding(8.dp)
-                )
-            }
-        }
-
-        Spacer(modifier = modifier.height(10.dp))
 
         board?.cells?.forEachIndexed { rowIndex, row ->
             Row {
